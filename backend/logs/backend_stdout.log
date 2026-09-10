@@ -1,0 +1,227 @@
+INFO:     Started server process [12108]
+INFO:     Waiting for application startup.
+2026-09-09 22:55:56,735 [INFO] app.main: Explainable Injury AI API starting up.
+2026-09-09 22:55:56,756 [INFO] app.database.mongodb: MongoDB indexes ensured.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51281 - "POST /api/auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:51282 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51283 - "POST /api/datasets/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51284 - "POST /api/datasets/DS-5a75a0aac59b/process HTTP/1.1" 200 OK
+2026-09-09 22:56:28,081 [INFO] app.ml.hyperparameter_tuning: Best XGBoost params: {'colsample_bytree': np.float64(0.749816047538945), 'gamma': np.float64(4.75357153204958), 'learning_rate': np.float64(0.14907884894416698), 'max_depth': 7, 'min_child_weight': 5, 'n_estimators': 202, 'reg_alpha': np.float64(0.8916655057071823), 'reg_lambda': np.float64(0.19994983163600577), 'subsample': np.float64(0.7836995567863468)} (CV F1=0.5855)
+2026-09-09 22:56:28,659 [INFO] app.ml.train_xgboost: Default XGBoost: {'accuracy': 0.5875, 'precision': 0.6016, 'recall': 0.5968, 'f1_score': 0.5992, 'specificity': 0.5776, 'roc_auc': 0.5998, 'pr_auc': 0.5867}
+2026-09-09 22:56:28,659 [INFO] app.ml.train_xgboost: Optimized XGBoost: {'accuracy': 0.5875, 'precision': 0.5912, 'recall': 0.6532, 'f1_score': 0.6207, 'specificity': 0.5172, 'roc_auc': 0.6063, 'pr_auc': 0.6038}
+INFO:     127.0.0.1:51302 - "POST /api/training/auto-select-best-dataset?n_iter=2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51331 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64106 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64106 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55900 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54082 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58425 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58425 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54082 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60597 - "OPTIONS /api/datasets/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60597 - "POST /api/datasets/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60597 - "OPTIONS /api/datasets/DS-615fd2c65546/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "POST /api/datasets/DS-615fd2c65546/validate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "OPTIONS /api/datasets/DS-615fd2c65546/process HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60597 - "POST /api/datasets/DS-615fd2c65546/process HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60597 - "OPTIONS /api/datasets/DS-615fd2c65546/select-for-training HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "POST /api/datasets/DS-615fd2c65546/select-for-training HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53651 - "OPTIONS /api/training/train HTTP/1.1" 200 OK
+C:\Users\91822\Downloads\risk_prediction\backend\venv\Lib\site-packages\sklearn\svm\_base.py:239: FutureWarning: The `probability` parameter was deprecated in 1.9 and will be removed in version 1.11. Use `CalibratedClassifierCV(SVC(), ensemble=False)` instead of `SVC(probability=True)`
+  warnings.warn(
+INFO:     127.0.0.1:60597 - "POST /api/training/train HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60597 - "OPTIONS /api/training/optimize?n_iter=30 HTTP/1.1" 200 OK
+2026-09-09 22:59:46,797 [INFO] app.ml.hyperparameter_tuning: Best XGBoost params: {'colsample_bytree': np.float64(0.706712405710114), 'gamma': np.float64(4.883074779163264), 'learning_rate': np.float64(0.08809703253046394), 'max_depth': 7, 'min_child_weight': 1, 'n_estimators': 484, 'reg_alpha': np.float64(0.47912378133394484), 'reg_lambda': np.float64(0.2897897441824462), 'subsample': np.float64(0.7957811041110252)} (CV F1=0.3048)
+2026-09-09 22:59:49,981 [INFO] app.ml.train_xgboost: Default XGBoost: {'accuracy': 0.3, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0, 'specificity': 0.5, 'roc_auc': 0.2917, 'pr_auc': 0.3507}
+2026-09-09 22:59:49,981 [INFO] app.ml.train_xgboost: Optimized XGBoost: {'accuracy': 0.4, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0, 'specificity': 0.6667, 'roc_auc': 0.1667, 'pr_auc': 0.3152}
+INFO:     127.0.0.1:61652 - "POST /api/training/optimize?n_iter=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61652 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64673 - "OPTIONS /api/training/ablation HTTP/1.1" 200 OK
+2026-09-09 22:59:56,251 [INFO] app.ml.ablation: M1_demographic: {'accuracy': 0.6, 'precision': 0.5, 'recall': 0.5, 'f1_score': 0.5, 'specificity': 0.6667, 'roc_auc': 0.5833, 'pr_auc': 0.6111, 'modality_configuration': 'M1_demographic', 'modalities': 'demographic'}
+2026-09-09 22:59:56,581 [INFO] app.ml.ablation: M2_demographic_training: {'accuracy': 0.4, 'precision': 0.3333, 'recall': 0.5, 'f1_score': 0.4, 'specificity': 0.3333, 'roc_auc': 0.5833, 'pr_auc': 0.7049, 'modality_configuration': 'M2_demographic_training', 'modalities': 'demographic+training'}
+2026-09-09 22:59:56,894 [INFO] app.ml.ablation: M3_demographic_training_recovery: {'accuracy': 0.3, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0, 'specificity': 0.5, 'roc_auc': 0.4167, 'pr_auc': 0.3986, 'modality_configuration': 'M3_demographic_training_recovery', 'modalities': 'demographic+training+recovery'}
+2026-09-09 22:59:57,217 [INFO] app.ml.ablation: M4_demographic_training_physiological: {'accuracy': 0.5, 'precision': 0.4, 'recall': 0.5, 'f1_score': 0.4444, 'specificity': 0.5, 'roc_auc': 0.3333, 'pr_auc': 0.3674, 'modality_configuration': 'M4_demographic_training_physiological', 'modalities': 'demographic+training+physiological'}
+2026-09-09 22:59:57,524 [INFO] app.ml.ablation: M5_demo_training_physio_recovery_lifestyle: {'accuracy': 0.4, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0, 'specificity': 0.6667, 'roc_auc': 0.4167, 'pr_auc': 0.4016, 'modality_configuration': 'M5_demo_training_physio_recovery_lifestyle', 'modalities': 'demographic+training+physiological+recovery+lifestyle'}
+2026-09-09 22:59:57,841 [INFO] app.ml.ablation: M6_all_modalities: {'accuracy': 0.3, 'precision': 0.0, 'recall': 0.0, 'f1_score': 0.0, 'specificity': 0.5, 'roc_auc': 0.2917, 'pr_auc': 0.3507, 'modality_configuration': 'M6_all_modalities', 'modalities': 'demographic+training+physiological+recovery+lifestyle+injury_history'}
+INFO:     127.0.0.1:64673 - "POST /api/training/ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64673 - "OPTIONS /api/training/auto-select-best-dataset?n_iter=30 HTTP/1.1" 200 OK
+2026-09-09 23:00:17,250 [INFO] app.ml.hyperparameter_tuning: Best XGBoost params: {'colsample_bytree': np.float64(0.908897907718663), 'gamma': np.float64(0.993578407670862), 'learning_rate': np.float64(0.011049202253484457), 'max_depth': 5, 'min_child_weight': 3, 'n_estimators': 180, 'reg_alpha': np.float64(1.4226839054973), 'reg_lambda': np.float64(1.5803510810624113), 'subsample': np.float64(0.8423839899124046)} (CV F1=0.5862)
+2026-09-09 23:00:19,532 [INFO] app.ml.train_xgboost: Default XGBoost: {'accuracy': 0.5875, 'precision': 0.6016, 'recall': 0.5968, 'f1_score': 0.5992, 'specificity': 0.5776, 'roc_auc': 0.5998, 'pr_auc': 0.5867}
+2026-09-09 23:00:19,533 [INFO] app.ml.train_xgboost: Optimized XGBoost: {'accuracy': 0.5667, 'precision': 0.5794, 'recall': 0.5887, 'f1_score': 0.584, 'specificity': 0.5431, 'roc_auc': 0.6145, 'pr_auc': 0.6245}
+INFO:     127.0.0.1:58965 - "POST /api/training/auto-select-best-dataset?n_iter=30 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58965 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "OPTIONS /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64576 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57183 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64576 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57183 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55392 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52659 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52659 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55374 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61652 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57183 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61652 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55374 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56046 - "OPTIONS /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52575 - "OPTIONS /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52575 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52575 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "OPTIONS /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53090 - "OPTIONS /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50060 - "OPTIONS /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53090 - "OPTIONS /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53090 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53090 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56611 - "OPTIONS /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61948 - "OPTIONS /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61948 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61948 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59281 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59281 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59281 - "OPTIONS /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "OPTIONS /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59281 - "OPTIONS /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59281 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59281 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62006 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59758 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57647 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57321 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57647 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57321 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59758 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57647 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52598 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62006 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57647 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62006 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64155 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64530 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64530 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64530 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64530 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53704 - "OPTIONS /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53704 - "POST /api/auth/register HTTP/1.1" 201 Created
+INFO:     127.0.0.1:65317 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52018 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57609 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59666 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61511 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65317 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59666 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61927 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61511 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57609 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/explainability/global HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/predictions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "OPTIONS /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56950 - "GET /api/evaluation/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/evaluation/metrics HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56306 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63223 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/evaluation/modality-ablation HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53098 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56306 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54249 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56950 - "GET /api/evaluation/confusion-matrix HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/evaluation/roc-curve HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54249 - "GET /api/evaluation/precision-recall HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54249 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54249 - "GET /api/datasets/training-selection HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/training/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/athletes HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62484 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64059 - "OPTIONS /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64059 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64059 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64059 - "GET /api/dashboard/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64059 - "GET /api/dashboard/stats HTTP/1.1" 200 OK

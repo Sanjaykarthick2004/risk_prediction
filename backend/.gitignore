@@ -1,0 +1,15 @@
+.env
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+models_artifacts/*.pkl
+models_artifacts/*.json
+outputs/figures/*
+outputs/shap/*
+outputs/reports/*
+!outputs/figures/.gitkeep
+!outputs/shap/.gitkeep
+!outputs/reports/.gitkeep
+data/raw/*.csv
+data/processed/*.csv

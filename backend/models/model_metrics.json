@@ -1,0 +1,70 @@
+{
+  "model_version": "XGBoost-v2.0-running",
+  "trained_at": "2026-09-10T08:53:48.207878+00:00",
+  "dataset_used": {
+    "source": "synthetic",
+    "label": "Trained Data",
+    "path": null
+  },
+  "default_xgboost": {
+    "accuracy": 0.758,
+    "precision": 0.4306,
+    "recall": 0.0654,
+    "f1_score": 0.1136,
+    "specificity": 0.9731,
+    "roc_auc": 0.6013,
+    "pr_auc": 0.3305
+  },
+  "optimized_xgboost": {
+    "accuracy": 0.758,
+    "precision": 0.4742,
+    "recall": 0.1941,
+    "f1_score": 0.2754,
+    "specificity": 0.9332,
+    "roc_auc": 0.6328,
+    "pr_auc": 0.3695
+  },
+  "best_params": {
+    "colsample_bytree": 0.908897907718663,
+    "gamma": 0.993578407670862,
+    "learning_rate": 0.011049202253484457,
+    "max_depth": 5,
+    "min_child_weight": 3,
+    "n_estimators": 180,
+    "reg_alpha": 1.4226839054973,
+    "reg_lambda": 1.5803510810624113,
+    "subsample": 0.8423839899124046
+  },
+  "best_cv_f1_during_search": 0.2408,
+  "cross_validation_5fold": {
+    "accuracy": {
+      "mean": 0.74,
+      "std": 0.0156
+    },
+    "precision": {
+      "mean": 0.3972,
+      "std": 0.0654
+    },
+    "recall": {
+      "mean": 0.1741,
+      "std": 0.0173
+    },
+    "f1": {
+      "mean": 0.2412,
+      "std": 0.0253
+    },
+    "roc_auc": {
+      "mean": 0.6297,
+      "std": 0.0204
+    },
+    "average_precision": {
+      "mean": 0.3401,
+      "std": 0.031
+    }
+  },
+  "smote_applied": true,
+  "cv_methodology": "SMOTE is applied fresh inside each cross-validation fold (imblearn Pipeline), not once before splitting, so synthetic minority samples cannot leak across a fold's train/validation boundary.",
+  "n_train": 12210,
+  "n_test": 2000,
+  "training_time_seconds": 65.9
+}

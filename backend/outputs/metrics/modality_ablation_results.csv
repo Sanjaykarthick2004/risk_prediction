@@ -1,0 +1,7 @@
+modality_configuration,modalities,f1_score,recall,roc_auc,pr_auc,accuracy,precision,specificity
+M1_demographic,demographic,0.0638,0.0359,0.4944,0.2414,0.7505,0.2881,0.9725
+M2_demographic_training,demographic+training,0.0406,0.0211,0.5237,0.271,0.7635,0.5263,0.9941
+M3_demographic_training_recovery,demographic+training+recovery,0.0041,0.0021,0.512,0.247,0.7595,0.1111,0.9948
+M4_demographic_training_physiological,demographic+training+physiological,0.0204,0.0105,0.514,0.2543,0.76,0.3125,0.9928
+M5_demo_training_physio_recovery_lifestyle,demographic+training+physiological+recovery+lifestyle,0.0363,0.019,0.527,0.2664,0.761,0.4091,0.9915
+M6_all_modalities,demographic+training+physiological+recovery+lifestyle+injury_history,0.1136,0.0654,0.6013,0.3305,0.758,0.4306,0.9731

@@ -1,0 +1,5 @@
+{
+  "smote_applied": true,
+  "n_train": 12210,
+  "n_test": 2000
+}
