@@ -1,8 +1,10 @@
 """FastAPI application entry point."""
 import logging
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from pymongo.errors import PyMongoError
 
 from app.api import (
     assessments, athletes, auth, dashboard, datasets, evaluation,
@@ -40,6 +42,21 @@ app.include_router(predictions.router)
 app.include_router(explainability.router)
 app.include_router(reports.router)
 app.include_router(dashboard.router)
+
+
+@app.exception_handler(PyMongoError)
+async def mongo_error_handler(request: Request, exc: PyMongoError):
+    # An unhandled exception here would otherwise propagate past
+    # CORSMiddleware to Starlette's outer error handler, which returns a
+    # response with NO Access-Control-Allow-Origin header — the browser then
+    # reports a misleading "blocked by CORS policy" error instead of the
+    # real problem (the database is unreachable). Registering a handler
+    # keeps this inside the middleware stack so CORS headers are still added.
+    logger.error("MongoDB error on %s %s: %s", request.method, request.url.path, exc)
+    return JSONResponse(
+        status_code=503,
+        content={"detail": "The database is temporarily unavailable. Please try again shortly."},
+    )
 
 
 @app.on_event("startup")

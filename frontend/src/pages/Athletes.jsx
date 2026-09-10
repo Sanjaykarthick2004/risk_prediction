@@ -97,7 +97,7 @@ export default function Athletes() {
                 {["Male", "Female", "Other"].map((o) => <option key={o} value={o}>{o}</option>)}
               </select>
             </FormField>
-            <FormField label="Sport" helper="Current research population is fixed to Running.">
+            <FormField label="Sport">
               <input type="text" value={form.sport} disabled />
             </FormField>
             <FormField label="Event Type">

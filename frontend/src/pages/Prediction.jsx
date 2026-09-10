@@ -304,10 +304,6 @@ function PredictionResult({ result, athlete }) {
         </div>
       </div>
 
-      <Alert tone="info" title="Responsible AI">
-        This prediction is a research and decision-support output. It is not a medical diagnosis
-        and should not replace professional assessment.
-      </Alert>
     </div>
   );
 }

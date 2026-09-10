@@ -1,26 +1,25 @@
 import {
-  Activity, ClipboardList, Database, FileBarChart, History, LayoutDashboard,
-  Sparkles, Target, Users,
+  ClipboardList, History, LayoutDashboard, Sparkles, Target, Users,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-/** Grouped nav — mirrors the routes that actually exist in App.jsx. No entries
- * for pages that don't exist (e.g. no separate "Assessments" or "Ablation
- * Analysis" routes — those live inside Prediction and Model Training/Evaluation). */
+/** Grouped nav. Dataset, Model Training, and Evaluation are deliberately not
+ * listed here (the student only needs Prediction day-to-day, and the model
+ * is already trained) — but their routes/pages/backend endpoints are all
+ * still fully intact, reachable directly at /dataset, /training, /evaluation
+ * whenever the research/training side of the project needs to be shown or
+ * re-run. This list only controls what appears in the sidebar. */
 const GROUPS = [
   { label: "Overview", items: [{ to: "/dashboard", label: "Dashboard", icon: LayoutDashboard }] },
   { label: "Athlete Management", items: [{ to: "/athletes", label: "Athletes", icon: Users }] },
   {
-    label: "Data & AI",
+    label: "Prediction",
     items: [
-      { to: "/dataset", label: "Dataset", icon: Database },
-      { to: "/training", label: "Model Training", icon: Activity },
       { to: "/prediction", label: "Prediction", icon: Target },
       { to: "/history", label: "Prediction History", icon: History },
     ],
   },
   { label: "Explainability", items: [{ to: "/explainability", label: "SHAP Explainability", icon: Sparkles }] },
-  { label: "Model Evaluation", items: [{ to: "/evaluation", label: "Evaluation", icon: FileBarChart }] },
   { label: "Reports", items: [{ to: "/reports", label: "Reports", icon: ClipboardList }] },
 ];
 

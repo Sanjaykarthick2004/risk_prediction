@@ -129,7 +129,6 @@ export default function Reports() {
           </section>
 
           <hr />
-          <p className="disclaimer-box">{report.disclaimer}</p>
         </div>
       )}
 
@@ -180,7 +179,6 @@ export default function Reports() {
           </section>
 
           <hr />
-          <p className="disclaimer-box">{report.disclaimer}</p>
         </div>
       )}
     </div>
