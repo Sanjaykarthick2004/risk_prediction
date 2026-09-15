@@ -5,14 +5,13 @@ plain collection accessors used by the service layer.
 """
 import logging
 
-from pymongo import ASCENDING, MongoClient
-from pymongo.server_api import ServerApi
+from pymongo import MongoClient
 
 from app.config import settings
 
 logger = logging.getLogger(__name__)
 
-client = MongoClient(settings.mongodb_uri, serverSelectionTimeoutMS=3000, tz_aware=True)
+client = MongoClient(settings.active_mongodb_uri, serverSelectionTimeoutMS=3000, tz_aware=True)
 db = client[settings.mongodb_database]
 
 # Collections
